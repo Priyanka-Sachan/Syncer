@@ -4,105 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
->
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <!--    <LinearLayout-->
+    <!--        android:id="@+id/g_drive_action"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="0dp"-->
+    <!--        android:orientation="vertical"-->
+    <!--        app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent">-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/create_text_file"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="create text file"-->
+    <!--            android:textColor="#000000"/>-->
+
+    <!--        <Button-->
+    <!--            android:id="@+id/create_folder"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="create folder"-->
+    <!--            android:textColor="#000000"/>-->
 
 
+    <!--        <Button-->
+    <!--            android:id="@+id/search_file"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="search file"-->
+    <!--            android:textColor="#000000"/>-->
 
-    <LinearLayout
-        android:id="@+id/g_drive_action"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <!--        <Button-->
+    <!--            android:id="@+id/search_folder"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="search folder"-->
+    <!--            android:textColor="#000000"/>-->
 
+    <!--        <Button-->
+    <!--            android:id="@+id/upload_file"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="upload file"-->
+    <!--            android:textColor="#000000"/>-->
 
-        <Button
-            android:id="@+id/create_text_file"
-            android:layout_width="match_parent"
-            android:layout_marginTop="7dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="create text file"
-            android:textColor="#000000"/>
+    <!--        <Button-->
+    <!--            android:id="@+id/download_file"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="download file"-->
+    <!--            android:textColor="#000000"/>-->
 
-        <Button
-            android:id="@+id/create_folder"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="create folder"
-            android:textColor="#000000"/>
+    <!--        <Button-->
+    <!--            android:id="@+id/delete_file_folder"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="delete file"-->
+    <!--            android:textColor="#000000"/>-->
 
+    <!--        <Button-->
+    <!--            android:id="@+id/view_file_folder"-->
+    <!--            android:layout_marginTop="7dp"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@drawable/button_gradient"-->
+    <!--            android:text="view folder"-->
+    <!--            android:textColor="#000000"/>-->
 
-        <Button
-            android:id="@+id/search_file"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="search file"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/search_folder"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="search folder"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/upload_file"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="upload file"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/download_file"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="download file"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/delete_file_folder"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="delete file"
-            android:textColor="#000000"/>
-
-        <Button
-            android:id="@+id/view_file_folder"
-            android:layout_marginTop="7dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/button_gradient"
-            android:text="view folder"
-            android:textColor="#000000"/>
-
-    </LinearLayout>
-
+    <!--    </LinearLayout>-->
     <TextView
-        android:padding="8dp"
-        android:gravity="center"
-        android:id="@+id/email"
+        android:id="@+id/synced_folder_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Synced Folders"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/folder_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintVertical_weight="1"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/synced_folder_title"
+        tools:listitem="@layout/card_folder" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/upload_folder"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginVertical="80dp"
+        android:background="@color/colorAccent"
+        android:src="@drawable/ic_add"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintRight_toRightOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
