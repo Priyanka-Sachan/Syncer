@@ -1,8 +1,5 @@
 package com.example.syncer.ui.home;
 
-import android.content.ContentResolver;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.util.Log;
@@ -10,26 +7,25 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.MimeTypeMap;
-import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.ammarptn.gdriverest.DriveServiceHelper;
 import com.ammarptn.gdriverest.GoogleDriveFileHolder;
-import com.example.syncer.MainActivity;
 import com.example.syncer.R;
 import com.example.syncer.database.Folder;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.googleapis.extensions.android.gms.auth.GoogleAccountCredential;
 import com.google.api.client.json.gson.GsonFactory;
@@ -55,10 +51,12 @@ public class HomeFragment extends Fragment {
 //    private Button download_file;
 //    private Button delete_file;
 //    private Button view_folder;
-    private FloatingActionButton uploadFolder;
+    private TextView syncedFolderTitle;
+    private LinearLayout emptyFolders;
+    private ExtendedFloatingActionButton uploadFolder;
+
     DriveServiceHelper mDriveServiceHelper;
     GoogleAccountCredential credential;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +73,8 @@ public class HomeFragment extends Fragment {
 //        download_file = root.findViewById(R.id.download_file);
 //        delete_file = root.findViewById(R.id.delete_file_folder);
 //        view_folder = root.findViewById(R.id.view_file_folder);
+        syncedFolderTitle = root.findViewById(R.id.synced_folder_title);
+        emptyFolders = root.findViewById(R.id.empty_folders);
 
         GoogleSignInAccount account = GoogleSignIn.getLastSignedInAccount(getContext());
         if (account != null) {
@@ -83,7 +83,7 @@ public class HomeFragment extends Fragment {
         credential = GoogleAccountCredential.usingOAuth2(getContext(), Collections.singleton(DriveScopes.DRIVE_FILE));
         credential.setSelectedAccount(account.getAccount());
 
-        Drive googledrive = new Drive.Builder(
+        Drive googleDrive = new Drive.Builder(
                 AndroidHttp.newCompatibleTransport(),
                 new GsonFactory(),
                 credential)
@@ -126,6 +126,15 @@ public class HomeFragment extends Fragment {
         homeViewModel.getAllFolders().observe(getViewLifecycleOwner(), new Observer<List<Folder>>() {
             @Override
             public void onChanged(List<Folder> folders) {
+                if (folders.isEmpty()) {
+                    syncedFolderTitle.setVisibility(View.GONE);
+                    folderRecyclerView.setVisibility(View.GONE);
+                    emptyFolders.setVisibility(View.VISIBLE);
+                } else {
+                    syncedFolderTitle.setVisibility(View.VISIBLE);
+                    folderRecyclerView.setVisibility(View.VISIBLE);
+                    emptyFolders.setVisibility(View.GONE);
+                }
                 folderAdapter.submitList(folders);
             }
         });

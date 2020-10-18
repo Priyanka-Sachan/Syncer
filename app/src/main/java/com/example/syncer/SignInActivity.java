@@ -31,10 +31,8 @@ public class SignInActivity extends AppCompatActivity {
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
                 .requestScopes(new Scope(DriveScopes.DRIVE_FILE))
-                .requestServerAuthCode("278059242290-3t77u4i7ccm68eeusmstsu8no4nsg2fu.apps.googleusercontent.com")
-                .build(); 
-
-
+                .requestServerAuthCode("626699297104-hgnm2c2iemr2q1hdikdr2s66997ddftg.apps.googleusercontent.com")
+                .build();
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
@@ -80,7 +78,7 @@ public class SignInActivity extends AppCompatActivity {
         try {
             GoogleSignInAccount account = completedTask.getResult(ApiException.class);
             // Signed in successfully, show authenticated UI.
-            Log.i("signinactivity","Inside this");
+            Log.i("signinactivity", "Inside this");
             updateUI(account);
         } catch (ApiException e) {
             // The ApiException status code indicates the detailed failure reason.
