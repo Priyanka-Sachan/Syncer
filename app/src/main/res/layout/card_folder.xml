@@ -1,35 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:src="@drawable/ic_folder" />
+    app:cardCornerRadius="4dp">
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/folder_name"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="Folder Name" />
-
-        <TextView
-            android:id="@+id/folder_last_synced"
-            android:layout_width="match_parent"
+        <ImageView
+            android:layout_width="50dp"
             android:layout_height="match_parent"
-            tools:text="Last Synced at" />
+            android:layout_margin="8dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/ic_folder"
+            app:tint="#FDBE00" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/folder_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                tools:text="Folder Name" />
+
+            <TextView
+                android:id="@+id/folder_last_synced"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:text="Last Synced at" />
+        </LinearLayout>
+
     </LinearLayout>
-
-
-</LinearLayout>
+</androidx.cardview.widget.CardView>

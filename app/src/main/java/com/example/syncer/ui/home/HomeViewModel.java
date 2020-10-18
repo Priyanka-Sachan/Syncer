@@ -24,7 +24,7 @@ public class HomeViewModel extends AndroidViewModel {
 
     void insert(Folder folder) {
         folderRepository.Insert(folder);
-        Log.d("HomeViewModel",folder.getTitle()+" created.");
+        Log.d("HomeViewModel", folder.getTitle() + " created.");
     }
 
     void update(Folder folder) {
